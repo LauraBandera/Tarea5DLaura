@@ -26,6 +26,7 @@ public class Domino {
     }
 
     public void introducirFicha(FichaDomino fd) {
+        this.comprobarFichaCorrecta(fd);
         juegoDomino.add(fd);
     }
 
@@ -36,6 +37,7 @@ public class Domino {
     public boolean contieneFicha(FichaDomino fd) {
         //return juegoDomino.contains(fd);
         Iterator<FichaDomino> it = juegoDomino.iterator();
+        this.comprobarFichaCorrecta(fd);
         while (it.hasNext()) {
             if (it.next().equals(fd)) {
                 return true;
@@ -44,7 +46,7 @@ public class Domino {
         return false;
     }
 
-    public ArrayList fichas() {
+    public ArrayList<FichaDomino> fichas() {
         ArrayList<FichaDomino> listaFichas = new ArrayList<>();
         Iterator<FichaDomino> it = juegoDomino.iterator();
         while (it.hasNext()) {
@@ -54,9 +56,17 @@ public class Domino {
     }
 
     public void eliminarFicha(FichaDomino fd) {
+        this.comprobarFichaCorrecta(fd);
         if (this.contieneFicha(fd)) {
             juegoDomino.remove(fd);
         }
     }
 
+    private void comprobarFichaCorrecta(FichaDomino fd){
+        if(fd.getSuperior() > fd.getInferior()){
+            int aux = fd.getInferior();
+            fd.setInferior(fd.getSuperior());
+            fd.setSuperior(aux);
+        }
+    }
 }
