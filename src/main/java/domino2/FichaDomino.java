@@ -35,7 +35,7 @@ public class FichaDomino {
 	}
 
 	//Getters y Setters
-	public int getSuperior() {
+	public Integer getSuperior() {
 		return superior;
 	}
 
@@ -43,7 +43,7 @@ public class FichaDomino {
 		this.superior = pasoLimites(superior);
 	}
 
-	public int getInferior() {
+	public Integer getInferior() {
 		return inferior;
 	}
 
