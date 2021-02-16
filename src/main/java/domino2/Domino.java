@@ -62,8 +62,8 @@ public class Domino {
         }
     }
 
-    private void comprobarFichaCorrecta(FichaDomino fd){
-        if(fd.getSuperior() > fd.getInferior()){
+    private void comprobarFichaCorrecta(FichaDomino fd) {
+        if (fd.getSuperior() > fd.getInferior()) {
             int aux = fd.getInferior();
             fd.setInferior(fd.getSuperior());
             fd.setSuperior(aux);
