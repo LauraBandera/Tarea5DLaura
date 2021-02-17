@@ -49,24 +49,30 @@ public class Traductor{
 	}
 	
 	public ArrayList<String> creacionListaIngles() {
-		ArrayList<String> vocabularioIng = new ArrayList<>();
+		ArrayList<String> vocabularioIng = new ArrayList<>(traductorIngEsp.keySet());
+		
+		/*
 		Iterator<Entry<String, String>> it = traductorIngEsp.entrySet().iterator();
 
 		while (it.hasNext()) {
 			Entry<String, String> e = it.next();
 			vocabularioIng.add(e.getKey());
 		}
+		
+		*/
 		return vocabularioIng;
 	}
 	
 	public ArrayList<String> traducciones() {
-		ArrayList<String> vocabularioEsp = new ArrayList<>();
+		ArrayList<String> vocabularioEsp = new ArrayList<>(traductorIngEsp.values());
+		/*
 		Iterator<Entry<String, String>> it = traductorIngEsp.entrySet().iterator();
 
 		while (it.hasNext()) {
 			Entry<String, String> e = it.next();
 			vocabularioEsp.add(e.getValue());
 		}
+		*/
 		
 		return vocabularioEsp;
 	}
