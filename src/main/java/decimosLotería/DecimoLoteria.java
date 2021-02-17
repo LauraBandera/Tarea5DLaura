@@ -59,4 +59,31 @@ public class DecimoLoteria {
 			System.out.println("Para el decimo " + dec.get(i) + " el premio es de " + prem.get(i));
 		}
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((decimos == null) ? 0 : decimos.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DecimoLoteria other = (DecimoLoteria) obj;
+		if (decimos == null) {
+			if (other.decimos != null)
+				return false;
+		} else if (!decimos.equals(other.decimos))
+			return false;
+		return true;
+	}
+	
+	
 }
